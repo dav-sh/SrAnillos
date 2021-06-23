@@ -22,7 +22,7 @@ Ejemplo sencillo de utilización de ant para compilación
     </target>
     <target name="run" depends="cpl" description="compile the source">
         <!-- Compilando el código en ${src} a ${build} -->
-        <java classname="src.executable.Main" classpath="${build}" />
+        <java classname="executable/Main" classpath="${build}" />
     </target>
     <target name="cjar" depends="cpl" description="Generando el directori dist para almacenar el Jar ">
         <!-- Creamos el directorio dist/lib -->
@@ -30,7 +30,7 @@ Ejemplo sencillo de utilización de ant para compilación
         <!-- Agregamos todo lo que hay en ${build} en ${nameDist}-${DSTAMP}.jar -->
         <jar jarfile="${dist}/lib/App-${DSTAMP}.jar" basedir="${build}">
             <manifest>
-                <attribute name="Main-Class" value="src/executable/Main" />
+                <attribute name="Main-Class" value="executable/Main" />
             </manifest>
         </jar>
     </target>
